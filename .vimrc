@@ -1,3 +1,4 @@
+" chipvp's vimrc
 set nocompatible              " be iMproved, required
 
 "
