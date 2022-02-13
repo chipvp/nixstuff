@@ -1,6 +1,52 @@
 " chipvp's vimrc
 set nocompatible              " be iMproved, required
 
+
+"
+" VUNDLE
+"
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 "
 " OPTIONS
 "
@@ -20,10 +66,21 @@ set winwidth=84                 " window width with multiple windows
 "
 colorscheme Kafka
 set showmode                                                                " display the current mode
-" set colorcolumn=80                                                        " right margin indicator
+set colorcolumn=135                                                        " right margin indicator
 set cursorline                                                              " highlight current line
 hi cursorline ctermbg=237 term=bold cterm=bold                              " highlight bg color of current line
 " hi CursorColumn ctermbg=1 cterm=bold guifg=white guibg=yellow gui=bold    " highlight cursor
+
+"
+" POWERLINE CONFIG
+"
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
 
 "
 " RELOAD CHANGES TO .vimrc
@@ -72,9 +129,9 @@ set tw=0                                " auto wrap at 79 chars
 " TABS
 "
 set ai			    	                " indent at same level of prev line
-set sw=4		    	                " use indents of 4 spaces
-set tabstop=4			                " an indentation every four columns
-set softtabstop=4		                " let backspace delete indent
+set sw=2		    	                " use indents of 2 spaces
+set tabstop=2			                " an indentation every two columns
+set softtabstop=2		                " let backspace delete indent
 set smarttab                            " helps with backspacing because of expandtab
 set expandtab			                " tabs are spaces, not tabs
 
